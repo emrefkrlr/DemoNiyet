@@ -6,7 +6,11 @@ from datetime import datetime
 
 st.set_page_config(page_title="Swiss AI Rental Pro", layout="wide", page_icon="🇨🇭")
 
-API_KEY = st.secrets["GROQ_API_KEY"]
+# API anahtarını güvenli sistemden çekiyoruz
+API_KEY = st.secrets["GROQ_API_KEY"] 
+
+# İstek atarken bu değişkeni kullan:
+headers = {"Authorization": f"Bearer {API_KEY}"}
 
 # --- UI SÖZLÜĞÜ ---
 UI_LANGS = {
